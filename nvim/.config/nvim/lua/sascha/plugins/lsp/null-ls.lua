@@ -11,7 +11,7 @@ return {
       null_ls.setup({
         on_attach = function(client, bufnr)
           if client.supports_method("textDocument/formatting") then
-            vim.keymap.set("n", "<Leader>f", function()
+            vim.keymap.set("n", "<Leader>fd", function()
               vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
             end, { buffer = bufnr, desc = "[lsp] format" })
       
@@ -23,12 +23,12 @@ return {
               callback = function()
                 vim.lsp.buf.format({ bufnr = bufnr, async = async })
               end,
-              desc = "[lsp] format on save",
+              desc = "[lsp] format on save"  ,
             })
           end
       
           if client.supports_method("textDocument/rangeFormatting") then
-            vim.keymap.set("x", "<Leader>f", function()
+            vim.keymap.set("x", "<Leader>fd", function()
               vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
             end, { buffer = bufnr, desc = "[lsp] format" })
           end
