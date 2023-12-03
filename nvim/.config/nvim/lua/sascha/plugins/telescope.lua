@@ -49,6 +49,12 @@ return {
 				file_ignore_patterns = {
 					".git/",
 					"backendApi/", -- make this load via exrc to project local
+					"backend/", -- schweiz
+					"Datenbank/", -- schweiz
+					"Distribution/", -- schweiz
+					"ISAG.NET/", -- schweiz
+					"Build/", -- schweiz
+					"Directory.Build.props/", -- schweiz
 					"%.mat",
 					"%.meta",
 					"%.asset",
@@ -57,9 +63,7 @@ return {
 					"%.cginc",
 					"%.asmdef",
 					"%.unity",
-					"node_modules/",
 					".angular/",
-					"dist/",
 				},
 			},
 			extensions = {
