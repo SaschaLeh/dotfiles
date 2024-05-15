@@ -10,12 +10,15 @@ vim.keymap.set("n", "<leader>o", "<cmd>NgSwitchHTML<CR>", { desc = "NgSwitcher -
 vim.keymap.set("n", "<leader>bb", "<cmd>BlamerToggle<CR>", { desc = "Toggle Blamer" })
 vim.keymap.set("n", "<leader>rs", "<cmd>LspRestart<CR>", { desc = "Restart LSP" })
 
+-- Diffview
+vim.keymap.set("n", "<leader>fh", "<cmd>DiffviewFileHistory %<CR>", { desc = "Git File History" })
+
 -- Import handling
 vim.keymap.set("n", "<leader>oi", function()
-	vim.lsp.buf.code_action({
-		context = { only = { "source.organizeImports" } },
-		apply = true,
-	})
+  vim.lsp.buf.code_action({
+    context = { only = { "source.organizeImports" } },
+    apply = true,
+  })
 end, { desc = "Organize Imports" })
 
 -- Move
@@ -23,21 +26,21 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 --Paste without losinig current buffer
-vim.keymap.set("x", "<leader>p", '"_dp')
+vim.keymap.set("x", "<leader>p", '"_dp', { desc = "Paste without losing current buffer" })
 
 --harpoon
 vim.keymap.set("n", "<leader>hh", function()
-	harpoonUi.toggle_quick_menu()
+  harpoonUi.toggle_quick_menu()
 end, { desc = "Harpoon - Toggle UI" })
 
 vim.keymap.set("n", "<leader>ha", function()
-	require("harpoon.mark").add_file()
+  require("harpoon.mark").add_file()
 end, { desc = "Harpoon - Add File" })
 
 vim.keymap.set("n", "<leader>hj", function()
-	harpoonUi.nav_next()
+  harpoonUi.nav_next()
 end, { desc = "Harpoon - Navigate next File" })
 
 vim.keymap.set("n", "<leader>hk", function()
-	harpoonUi.nav_prev()
+  harpoonUi.nav_prev()
 end, { desc = "Harpoon - Navigate previous File" })

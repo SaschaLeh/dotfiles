@@ -2,7 +2,7 @@
 export WORK="$HOME/Thinktecture/Repos"
 export PRIVATE="$HOME/Slash-IT/Repos"
 export DOTFILES="$PRIVATE/dotfiles/"
-export NVIMPLUG="$HOME/.config/nvim/lua/sascha/plugins/"
+export NVIMPLUG="$HOME/.config/nvim/lua/plugins/"
 
 alias tt="cd $WORK"
 alias pp="cd $PRIVATE"
