@@ -5,6 +5,10 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       loglevel = "debug",
+      inlay_hints = {
+        enabled = false,
+        exclude = {}, -- filetypes for which you don't want to enable inlay hints
+      },
       servers = {
         html = {
 
@@ -30,9 +34,17 @@ return {
           },
         },
         tsserver = {
+          init_options = {
+            preferences = {
+              organizeImportsIgnoreCase = true,
+              importModuleSpecifierPreference = "relative",
+              importModuleSpecifierEnding = "minimal",
+            },
+          },
           debug = false,
           disable_commands = false,
           enable_import_on_completion = true,
+          importModuleSpecifierPreference = "relative",
           -- import all
           import_all_timeout = 5000, -- ms
           -- lower numbers = higher priority
