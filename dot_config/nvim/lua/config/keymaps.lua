@@ -4,9 +4,12 @@
 --
 local harpoonUi = require("harpoon.ui")
 
+--NgSwitcher
 vim.keymap.set("n", "<leader>u", "<cmd>NgSwitchTS<CR>", { desc = "NgSwitcher - Switch to TS" })
 vim.keymap.set("n", "<leader>i", "<cmd>NgSwitchCSS<CR>", { desc = "NgSwitcher - Switch to CSS" })
 vim.keymap.set("n", "<leader>o", "<cmd>NgSwitchHTML<CR>", { desc = "NgSwitcher - Switch to HTML" })
+
+--Blamer
 vim.keymap.set("n", "<leader>bb", "<cmd>BlamerToggle<CR>", { desc = "Toggle Blamer" })
 vim.keymap.set("n", "<leader>rs", "<cmd>LspRestart<CR>", { desc = "Restart LSP" })
 
