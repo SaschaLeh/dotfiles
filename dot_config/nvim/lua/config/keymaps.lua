@@ -1,12 +1,10 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
-local harpoonUi = require("harpoon.ui")
-
 --NgSwitcher
-vim.keymap.set("n", "<leader>u", "<cmd>NgSwitchTS<CR>", { desc = "NgSwitcher - Switch to TS" })
-vim.keymap.set("n", "<leader>i", "<cmd>NgSwitchCSS<CR>", { desc = "NgSwitcher - Switch to CSS" })
-vim.keymap.set("n", "<leader>o", "<cmd>NgSwitchHTML<CR>", { desc = "NgSwitcher - Switch to HTML" })
+vim.keymap.set("n", "<leader>ngt", "<cmd>NgSwitchTS<CR>", { desc = "NgSwitcher - Switch to TS" })
+vim.keymap.set("n", "<leader>ngc", "<cmd>NgSwitchCSS<CR>", { desc = "NgSwitcher - Switch to CSS" })
+vim.keymap.set("n", "<leader>ngh", "<cmd>NgSwitchHTML<CR>", { desc = "NgSwitcher - Switch to HTML" })
 
 --Blamer
 vim.keymap.set("n", "<leader>bb", "<cmd>BlamerToggle<CR>", { desc = "Toggle Blamer" })

@@ -1,25 +1,10 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	build = ":TSUpdate",
-	config = function()
-		require("nvim-treesitter.configs").setup({
-			ensure_installed = {
-				"lua",
-				"javascript",
-				"markdown",
-				"angular",
-				"css",
-				"json",
-				"scss",
-				"typescript",
-			},
-			auto_install = true,
-			highlight = {
-				enable = true,
-			},
-			indent = {
-				enable = true,
-			},
-		})
-	end,
+  "nvim-treesitter/nvim-treesitter",
+  opts = function(_, opts)
+    opts.ensure_installed = opts.ensure_installed or {}
+    vim.list_extend(opts.ensure_installed, {
+      "angular", "css", "scss", "javascript", "typescript",
+      "json", "lua", "markdown",
+    })
+  end,
 }

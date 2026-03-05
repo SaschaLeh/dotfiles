@@ -10,14 +10,6 @@ return {
         lazy = true,
       },
     },
-    keys = {
-      { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-      {
-        "<leader>f/",
-        ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-        desc = "Grep string",
-      },
-    },
     opts = {
       extensions_list = { "fzf" },
       extensions = {
