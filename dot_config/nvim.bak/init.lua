@@ -1,1 +1,1 @@
-require("sascha")
+require("config")

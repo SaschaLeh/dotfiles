@@ -100,3 +100,7 @@
 	trustExitCode = true
 [credential]
 	helper = osxkeychain
+[http "https://git.pl29.agilent.com"]
+    proxy = "http://192.168.64.2:3128"
+[http "https://sparksource.collaboration.agilent.com"]
+    proxy = "http://192.168.64.2:3128"

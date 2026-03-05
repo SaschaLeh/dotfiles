@@ -21,7 +21,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git)
 
 # setup fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/
 
 # source $ZSH/oh-my-zsh.sh
 source ~/.bash_profile

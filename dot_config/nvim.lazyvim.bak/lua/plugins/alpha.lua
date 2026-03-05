@@ -1,5 +1,5 @@
 return {
-
+    "goolord/alpha-nvim",
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
@@ -37,12 +37,41 @@ return {
         },
         dynamic_preview_title = true,
         path_display = {
+          smart = "true",
+          shorten = {
+            len = 3,
+            exclude = { 1, -1 },
+          },
+          truncate = true,
           filename_first = { reverse_directories = false },
         },
         show_line = true,
         fname_width = 160,
         layout_strategy = "center",
+        layout_config = {
+          prompt_position = "top",
+          vertical = { width = 0.9 },
+          horizontal = { width = 0.9 },
+        },
+        sorting_strategy = "ascending",
+        winblend = 0,
       },
     },
-  },
+    vim.api.nvim_create_autocmd("User", {
+            once = true,
+            pattern = "LazyVimStarted",
+            callback = function()
+                local stats = require("lazy").stats()
+                local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+                dashboard.section.footer.val = "⚡ Neovim loaded "
+                    .. stats.loaded
+                    .. "/"
+                    .. stats.count
+                    .. " plugins in "
+                    .. ms
+                    .. "ms"
+                pcall(vim.cmd.AlphaRedraw)
+            end,
+        })
+    end,
 }

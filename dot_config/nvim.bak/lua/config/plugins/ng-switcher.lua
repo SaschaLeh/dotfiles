@@ -1,0 +1,3 @@
+return {
+  "softoika/ngswitcher.vim",
+}
