@@ -123,7 +123,6 @@ booking limits per member.
 
 Closes: #234
 Refs: #198
-Co-authored-by: Claude Opus 4.5 <noreply@anthropic.com>
 ```
 
 ## Complete Examples
@@ -176,7 +175,7 @@ Refs: #789
 2. **Identify type**: What kind of change is this?
 3. **Determine scope**: What area of the codebase?
 4. **Write description**: Imperative, concise, WHAT not HOW
-5. **Add body if needed**: Explain WHY for non-obvious changes
+5. **Add body only if needed**: Body is for non-obvious WHY only — skip it for straightforward changes
 6. **Add footer**: Reference issues, breaking changes
 
 ## Commit Message Template
@@ -187,10 +186,9 @@ Use HEREDOC for proper formatting:
 git commit -m "$(cat <<'EOF'
 <type>(<scope>): <description>
 
-<body - optional, explain WHY>
+<body - optional, only when WHY is non-obvious>
 
-<footer - optional>
-Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
+<footer - optional, issues/breaking changes only>
 EOF
 )"
 ```
@@ -202,9 +200,8 @@ EOF
 - Use lowercase for type and scope
 - Use imperative mood in description
 - Keep description under 72 characters
-- Add body for non-trivial changes
-- Reference related issues in footer
-- Include Co-Authored-By when AI assisted
+- Add body only when the WHY is non-obvious and helps future readers
+- Reference related issues in footer when applicable
 
 **Ask first**:
 
